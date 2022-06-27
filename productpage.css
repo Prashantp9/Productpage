@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&family=Secular+One&family=Urbanist:wght@100&display=swap');
 
-
-body{
+*{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+body{
   background: #BCD4E6;
 }
 .maindiv {
@@ -107,6 +109,11 @@ body{
 
 @supports (display: flex) {
   @media screen and (max-width: 500px) {
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body{
       background-color: #BCD4E6;
 
