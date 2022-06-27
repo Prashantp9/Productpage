@@ -1,21 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&family=Secular+One&family=Urbanist:wght@100&display=swap');
 
+
+body{
+  margin: 0;
+  padding: 0;
+  background: #BCD4E6;
+}
 .maindiv {
-  display: flex;
+  
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 1.5fr 1.2fr 1fr 0.5fr 0.5fr;
+  grid-template-areas: 
+  "imgicon imgicon title title"
+  "imgicon imgicon desc desc" 
+  "imgicon imgicon price price"
+  "imgicon imgicon selc selc"
+  "imgicon imgicon price price"
+  ;
   height: 100vh;
   width: 100vw;
   background-color: #BCD4E6;
 }
 
 .rights {
-  flex: 1;
 }
 .lefts {
-  flex: 2;
 }
 .imagecont {
   margin: 45px;
   width: 395px;
+  grid-area: imgicon;
 
 }
 .imagecont img {
@@ -30,10 +45,12 @@
   margin: 167px;
   margin-left: 53px;
   font-family: 'Questrial', sans-serif;
+ 
 }
 .producttitle {
   height: 30vh;
   display: flex;
+  grid-area: title;
 
   position: relative;
 }
@@ -41,9 +58,11 @@
 .productdescription p {
   padding: 48px;
   font-family: 'Questrial', sans-serif;
+  grid-area: desc;
 }
 .productprice {
   height: 100px;
+  grid-area: price;
 }
 .productprice p {
   width: 300px;
@@ -53,6 +72,7 @@
 }
 .productcart {
   height: 150px;
+  grid-area: cart;
 }
 .productcart button {
   height: 45px;
@@ -76,9 +96,38 @@
   font-size: 17px;
   font-weight: 100;
   background: unset;
+  grid-area: selc;
 }
 #sizer{
     width: 40px;
     margin-left: 13px;
     border-radius: 3px;
+}
+
+
+@supports (display: flex) {
+  @media screen and (max-width: 500px) {
+    body{
+      background-color: #BCD4E6;
+
+    }
+    .maindiv {
+  
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows:  1fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
+      grid-template-areas: 
+      "imgicon "
+      "imgicon " 
+      "title"
+      "decs"
+      "selc"
+      "price"
+      ;
+      height: 100vh;
+      width: 100vw;
+      background-color: #BCD4E6;
+    }
+    
+  }
 }
